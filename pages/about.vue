@@ -2,12 +2,8 @@
   <div class="container">
     <ul class="about">
       <li class="photo">
-        <Loader
-          v-if="imageLoading"
-          absolute />
-        <img
-          :src="image"
-          :alt="name" />
+        <Loader v-if="imageLoading" absolute />
+        <img :src="image" :alt="name" />
       </li>
       <li class="name">
         {{ name }}
@@ -20,8 +16,8 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import Loader from '~/components/Loader'
+import { mapState } from "vuex";
+import Loader from "~/components/Loader";
 
 export default {
   components: {
@@ -30,39 +26,45 @@ export default {
   data() {
     return {
       imageLoading: true
-    }
+    };
   },
   computed: {
-    ...mapState('about', [
-      'name',
-      'email',
-      'github',
-      'phone',
-      'image'
-    ])
+    ...mapState("about", ["name", "email", "github", "phone", "image"])
   },
   mounted() {
-    this.init()
+    this.init();
   },
   methods: {
     async init() {
-      await this.$loadImage(this.image)
-      this.imageLoading = false
+      await this.$loadImage(this.image);
+      this.imageLoading = false;
     }
   },
   head() {
     return {
       meta: [
-        {hid: 'og:type', property: 'og:type', content: 'website'},
-        {hid: 'og:site_name', property: 'og:site_name', content: 'Nuxt OMDbAPI'},
-        {hid: 'og:title', property: 'og:title', content: this.name},
-        {hid: 'og:description', property: 'og:description', content: this.email},
-        {hid: 'og:image', property: 'og:image', content: this.image},
-        {hid: 'og:url', property: 'og:url', content: `${process.env.CLIENT_URL}${this.$route.fullPath}`}
+        { hid: "og:type", property: "og:type", content: "website" },
+        {
+          hid: "og:site_name",
+          property: "og:site_name",
+          content: "Nuxt OMDbAPI"
+        },
+        { hid: "og:title", property: "og:title", content: this.name },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: this.email
+        },
+        { hid: "og:image", property: "og:image", content: this.image },
+        {
+          hid: "og:url",
+          property: "og:url",
+          content: `${process.env.CLIENT_URL}${this.$route.fullPath}`
+        }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -87,13 +89,14 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
       width: 80%;
+      height: auto;
       border-radius: 50%;
     }
   }
 
   .name {
     margin-bottom: 40px;
-    font: 40px 'Oswald', sans-serif;
+    font: 40px "Oswald", sans-serif;
   }
 }
 </style>
