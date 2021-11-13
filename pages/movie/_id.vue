@@ -46,7 +46,7 @@
             >
               <img
                 :src="
-                  `https://raw.githubusercontent.com/ParkYoungWoong/vue3-movie-app/master/src/assets/${name}.png`
+                  `https://raw.githubusercontent.com/seu1goo/clone03_vue_movie/master/assets/${name}.png`
                 "
                 :alt="name"
               />
