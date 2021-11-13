@@ -2,6 +2,9 @@
   "name": "nuxt-movie-app",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -42,5 +45,20 @@
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
     "vue-jest": "^3.0.7"
-  }
+  },
+  "description": "## Build Setup",
+  "main": ".babelrc.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seu1goo/clone03_vue_movie.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seu1goo/clone03_vue_movie/issues"
+  },
+  "homepage": "https://github.com/seu1goo/clone03_vue_movie#readme"
 }
